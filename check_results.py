@@ -41,7 +41,7 @@ def check_p5_results_query_pinecone(
     load_dotenv(dotenv_path)
 
     pinecone.init(
-        api_key=os.environ.get("PINECONE_API_KEY"), environment="us-east1-gcp"
+        api_key=os.environ.get("PINECONE_API_KEY"), environment="us-west4-gcp"
     )
     index = pinecone.Index(index_name)
 
@@ -54,8 +54,8 @@ def check_p5_results_query_pinecone(
 
 if __name__ == "__main__":
 
-    # check_p3_results()
+    check_p3_results()
 
     # index starts at 0
     # check data from d4.csv matches the index in pinecone
-    check_p5_results_query_pinecone(ids=["9"], index_name="1kmovies")
+    check_p5_results_query_pinecone(ids=["2"], index_name="1kmovies")
